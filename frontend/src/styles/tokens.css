@@ -1,0 +1,68 @@
+/* ============================================================
+   Design tokens — derived from Style.md (Apple-inspired system)
+   Single blue accent, near-black/parchment/white surfaces,
+   SF Pro -> system-ui stack, negative display tracking.
+   ============================================================ */
+
+:root {
+  /* Brand & accent — the ONE interactive color */
+  --color-primary: #0066cc;            /* Action Blue */
+  --color-primary-focus: #0071e3;
+  --color-primary-on-dark: #2997ff;    /* Sky Link Blue (dark tiles only) */
+
+  /* Surfaces */
+  --color-canvas: #ffffff;             /* Pure White */
+  --color-canvas-parchment: #f5f5f7;   /* Parchment */
+  --color-surface-pearl: #fafafc;
+  --color-surface-tile-1: #272729;     /* Near-Black Tile 1 */
+  --color-surface-tile-2: #2a2a2c;
+  --color-surface-tile-3: #252527;
+  --color-surface-black: #000000;
+
+  /* Text */
+  --color-ink: #1d1d1f;
+  --color-body: #1d1d1f;
+  --color-body-on-dark: #ffffff;
+  --color-body-muted: #cccccc;
+  --color-ink-muted-80: #333333;
+  --color-ink-muted-48: #7a7a7a;
+
+  /* Hairlines */
+  --color-divider-soft: #f0f0f0;
+  --color-hairline: #e0e0e0;
+
+  /* Signal semantics (used sparingly, only for direction tags) */
+  --color-long: #1a8f3a;               /* muted green */
+  --color-short: #c2364b;              /* muted red */
+
+  /* Typography */
+  --font-display: "SF Pro Display", system-ui, -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+  --font-text: "SF Pro Text", system-ui, -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+
+  /* Spacing (8px base) */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 17px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+  --space-section: 80px;
+
+  /* Radius */
+  --radius-none: 0px;
+  --radius-xs: 5px;
+  --radius-sm: 8px;
+  --radius-md: 11px;
+  --radius-lg: 18px;
+  --radius-pill: 9999px;
+
+  /* The single system shadow — product renders only */
+  --shadow-product: 0 3px 5px 30px rgba(0, 0, 0, 0.22);
+
+  /* Layout */
+  --content-max: 980px;
+  --grid-max: 1440px;
+  --nav-height: 44px;
+  --subnav-height: 52px;
+}

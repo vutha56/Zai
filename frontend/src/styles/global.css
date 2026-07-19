@@ -1,0 +1,241 @@
+/* Global styles + reusable component classes per Style.md */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-text);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.47;
+  letter-spacing: -0.01em; /* slight tighten for Inter */
+  color: var(--color-ink);
+  background: var(--color-canvas-parchment);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ---------- Layout primitives ---------- */
+
+.tile {
+  width: 100%;
+  padding: var(--space-section) var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tile--light {
+  background: var(--color-canvas);
+}
+.tile--parchment {
+  background: var(--color-canvas-parchment);
+}
+.tile--dark {
+  background: var(--color-surface-tile-1);
+  color: var(--color-body-on-dark);
+}
+.tile--dark h1,
+.tile--dark h2,
+.tile--dark h3 {
+  color: var(--color-body-on-dark);
+}
+.tile__inner {
+  width: 100%;
+  max-width: var(--grid-max);
+}
+
+/* ---------- Buttons (pill grammar) ---------- */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 11px 22px;
+  font-size: 17px;
+  font-weight: 400;
+  font-family: var(--font-text);
+  transition: transform 0.1s ease;
+}
+.btn-primary:active {
+  transform: scale(0.95);
+}
+.btn-primary:focus-visible {
+  outline: 2px solid var(--color-primary-focus);
+  outline-offset: 2px;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-pill);
+  padding: 11px 22px;
+  font-size: 17px;
+  transition: transform 0.1s ease;
+}
+.btn-secondary:active {
+  transform: scale(0.95);
+}
+
+/* ---------- Utility card ---------- */
+
+.utility-card {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+.utility-card:hover {
+  text-decoration: none;
+  border-color: var(--color-divider-soft);
+}
+
+/* ---------- Pills / tags ---------- */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--color-divider-soft);
+  color: var(--color-ink);
+  letter-spacing: -0.01em;
+}
+.tag--long {
+  background: rgba(26, 143, 58, 0.12);
+  color: var(--color-long);
+}
+.tag--short {
+  background: rgba(194, 54, 75, 0.12);
+  color: var(--color-short);
+}
+.tag--open {
+  background: rgba(0, 102, 204, 0.1);
+  color: var(--color-primary);
+}
+.tag--win {
+  background: rgba(26, 143, 58, 0.14);
+  color: var(--color-long);
+}
+.tag--loss {
+  background: rgba(194, 54, 75, 0.14);
+  color: var(--color-short);
+}
+.tag--expired {
+  background: var(--color-divider-soft);
+  color: var(--color-ink-muted-48);
+}
+.tag--kz {
+  background: rgba(0, 102, 204, 0.14);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+}
+.signal-card__tf,
+.detail-hero__tags .tag--tf {
+  background: var(--color-canvas-parchment);
+  color: var(--color-ink-muted-80);
+  font-family: monospace;
+  font-size: 12px;
+}
+
+/* ---------- Numeric mono ---------- */
+
+.mono {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+.muted {
+  color: var(--color-ink-muted-48);
+}
+
+/* ---------- Eyebrow / section label ---------- */
+
+.eyebrow {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-xs);
+}
+
+/* ---------- Markdown body (analysis text) ---------- */
+
+.markdown > *:first-child {
+  margin-top: 0;
+}
+.markdown h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: var(--space-lg) 0 var(--space-xs);
+  color: var(--color-ink);
+}
+.markdown p,
+.markdown li {
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--color-ink);
+}
+.markdown ul {
+  margin: var(--space-xs) 0;
+  padding-left: 1.2em;
+}
+.markdown li {
+  margin: 4px 0;
+}
+.markdown code {
+  font-family: "SF Mono", "Menlo", monospace;
+  font-size: 15px;
+  background: var(--color-divider-soft);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
